@@ -1,5 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
 import FilmCard from '../../components/film-card/film-card';
+import Logo from '../../components/logo/logo';
+import { Helmet } from 'react-helmet-async';
 
 type WelcomeScreenProps = {
     favouriteFilmsCount: number;
@@ -18,6 +20,9 @@ function WelcomeScreen({
     return (
         <Fragment>
             <section className="film-card">
+                <Helmet>
+                    <title> Что посмотреть</title>
+                </Helmet>
                 <div className="film-card__bg">
                     <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
                 </div>
@@ -25,13 +30,7 @@ function WelcomeScreen({
                 <h1 className="visually-hidden">WTW</h1>
 
                 <header className="page-header film-card__head">
-                    <div className="logo">
-                        <a className="logo__link">
-                            <span className="logo__letter logo__letter--1">W</span>
-                            <span className="logo__letter logo__letter--2">T</span>
-                            <span className="logo__letter logo__letter--3">W</span>
-                        </a>
-                    </div>
+                    <Logo />
 
                     <ul className="user-block">
                         <li className="user-block__item">
