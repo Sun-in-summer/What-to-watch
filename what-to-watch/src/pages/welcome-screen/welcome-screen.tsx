@@ -1,22 +1,26 @@
 import { Fragment } from 'react/jsx-runtime';
-import FilmCard from '../../components/film-card/film-card';
+
 import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
+import FilmCardsList from '../../components/film-cards-list/film-cards-list';
+import { Film } from '../../types/film';
 
 type WelcomeScreenProps = {
     favouriteFilmsCount: number;
-    filmsCardsCount: number;
+
     promoFilmTitle: string;
     promoFilmGenre: string;
     promoFilmIssueYear: number;
+    films: Film[];
 }
 
 function WelcomeScreen({
     favouriteFilmsCount,
-    filmsCardsCount,
+
     promoFilmTitle,
     promoFilmGenre,
-    promoFilmIssueYear }: WelcomeScreenProps): JSX.Element {
+    promoFilmIssueYear,
+    films }: WelcomeScreenProps): JSX.Element {
     return (
         <Fragment>
             <section className="film-card">
@@ -114,9 +118,7 @@ function WelcomeScreen({
                         </li>
                     </ul>
 
-                    <div className="catalog__films-list">
-                        {Array.from({ length: filmsCardsCount }, (_v, k) => <FilmCard key={k} />)}
-                    </div>
+                    {<FilmCardsList films={films} />}
 
                     <div className="catalog__more">
                         <button className="catalog__button" type="button">Show more</button>

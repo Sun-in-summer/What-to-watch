@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { Setting } from './const.ts';
+import { reviews } from './mocks/reviews.ts';
+import { films } from './mocks/films.ts';
 
 const DEFAULT_FILM_TITLE = "The Grand Budapest Hotel";
 const DEFAULT_GENRE = "Drama";
@@ -16,6 +18,8 @@ createRoot(document.getElementById('root')!).render(
       promoFilmTitle={DEFAULT_FILM_TITLE}
       promoFilmGenre={DEFAULT_GENRE}
       promoFilmIssueYear={DEFAULT_YEAR}
+      films={films}
+      reviews={reviews}
 
     />
   </StrictMode>,
