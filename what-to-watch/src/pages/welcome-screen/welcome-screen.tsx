@@ -4,6 +4,7 @@ import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
 import { Film } from '../../types/film';
+import { Link } from 'react-router-dom';
 
 type WelcomeScreenProps = {
     favouriteFilmsCount: number;
@@ -68,13 +69,14 @@ function WelcomeScreen({
                                     </svg>
                                     <span>Play</span>
                                 </button>
-                                <button className="btn btn--list film-card__button" type="button">
+                                <Link to='/mylist' ><button className="btn btn--list film-card__button" type="button">
                                     <svg viewBox="0 0 19 20" width="19" height="20">
                                         <use xlinkHref="#add"></use>
                                     </svg>
                                     <span>My list</span>
                                     <span className="film-card__count">{favouriteFilmsCount}</span>
-                                </button>
+                                </button></Link>
+
                             </div>
                         </div>
                     </div>
@@ -126,13 +128,7 @@ function WelcomeScreen({
                 </section>
 
                 <footer className="page-footer">
-                    <div className="logo">
-                        <a className="logo__link logo__link--light">
-                            <span className="logo__letter logo__letter--1">W</span>
-                            <span className="logo__letter logo__letter--2">T</span>
-                            <span className="logo__letter logo__letter--3">W</span>
-                        </a>
-                    </div>
+                    <Logo />
 
                     <div className="copyright">
                         <p>© 2019 What to watch Ltd.</p>

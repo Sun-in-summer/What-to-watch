@@ -5,14 +5,14 @@ export const films: Film[] = [
         id: 2,
         title: 'Fantastic Beasts: The Crimes of Grindelwald',
         images: {
-            posterSrc: '/img/poster-fantastic-beasts-the-crimes-of-grindelwald.jpg',
-            previewSrc: '/img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
-            backgroundSrc: '/img/bg-fantastic-beasts-the-crimes-of-grindelwald.jpg',
+            posterSrc: '/img/shutter-island.jpg',
+            previewSrc: '/img/shutter-island.jpg',
+            backgroundSrc: '/img/shutter-island.jpg',
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'The second installment of the "Fantastic Beasts" series featuring the adventures of Magizoologist Newt Scamander.',
         rating: 5.2,
@@ -38,8 +38,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'The story of the legendary British rock band Queen and lead singer Freddie Mercury, leading up to their famous performance at Live Aid (1985).',
         rating: 4.9,
@@ -65,8 +65,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Macbeth, the Thane of Glamis, receives a prophecy from a trio of witches that one day he will become King of Scotland. Consumed by ambition and spurred to action by his wife, Macbeth murders his king and takes the throne for himself.',
         rating: 7.1,
@@ -92,8 +92,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'A biopic depicting the early years of legendary director and aviator Howard Hughes\' career from the late 1920s to the mid 1940s.',
         rating: 7.7,
@@ -119,8 +119,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Kevin\'s mother struggles to love her strange child despite the increasingly dangerous things he says and does as he grows up. But Kevin is just getting started, and his final act will be beyond anything anyone imagined.',
         rating: 6.8,
@@ -146,8 +146,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'A look into the nightly lives of four vampires who have lived together on Staten Island for over a century.',
         rating: 0.0,
@@ -173,8 +173,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'A frontiersman on a fur trading expedition in the 1820s fights for survival after being mauled by a bear and left for dead by members of his own hunting team.',
         rating: 7.6,
@@ -200,8 +200,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Teddy Daniels and Chuck Aule, two US marshals, are sent to an asylum on a remote island in order to investigate the disappearance of a patient, where Teddy uncovers a shocking truth about the place.',
         rating: 6.3,
@@ -227,8 +227,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
         rating: 9.5,
@@ -254,8 +254,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'While out hunting, Llewelyn finds the grisly aftermath of a drug deal. Though he knows better, he cannot resist the cash left behind and takes it. The hunter becomes the hunted when a merciless killer named Chigurh picks up his trail.',
         rating: 9.2,
@@ -281,8 +281,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'An alien invasion threatens the future of humanity. The catastrophic nightmare is depicted through the eyes of one American family fighting for survival.',
         rating: 7.3,
@@ -308,8 +308,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'After a sudden attack on MI5, Johnny English, Britain\'s most confident, yet unintelligent spy, becomes Britain\'s only spy.',
         rating: 5.1,
@@ -335,8 +335,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond.',
         rating: 5.5,
@@ -362,8 +362,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Two 12-year-olds, who live on an island, fall in love with each other and elope into the wilderness. While people set out on a search mission, a violent storm approaching them catches their attention.',
         rating: 8.4,
@@ -389,8 +389,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'True story of Heinrich Harrer, an Austrian mountain climber who became friends with the Dalai Lama at the time of China\'s takeover of Tibet.',
         rating: 5.5,
@@ -416,8 +416,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'A father and son go on the run, pursued by the government and a cult drawn to the child\'s special powers.',
         rating: 7.6,
@@ -443,8 +443,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'A year after their father\'s funeral, three brothers travel across India by train in an attempt to bond with each other.',
         rating: 6.7,
@@ -470,8 +470,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'After Queen Elizabeth I commands him not to grow old, a young nobleman struggles with love and his place in the world.',
         rating: 7.5,
@@ -497,8 +497,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'In the late 1970s, two FBI agents broaden the realm of criminal science by investigating the psychology behind murder and end up getting too close to real-life monsters.',
         rating: 0.0,
@@ -524,8 +524,8 @@ export const films: Film[] = [
             backgroundColor: '#ffffff'
         },
         videos: {
-            videoLink: '#',
-            previewVideoLink: '#'
+            videoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm',
+            previewVideoLink: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm'
         },
         description: 'Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.',
         rating: 6.9,

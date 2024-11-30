@@ -1,7 +1,24 @@
-function PlayerScreen(): JSX.Element {
+import { Navigate, useParams } from 'react-router-dom';
+import { Film } from '../../types/film';
+import { AppRoute } from '../../const';
+
+type PlayerScreenProps = {
+    films: Film[];
+}
+function PlayerScreen({ films }: PlayerScreenProps): JSX.Element {
+
+
+    const { id } = useParams();
+
+    const currentFilm = films.find((film) => film.id.toString() === id);
+
+    if (currentFilm === undefined) {
+        return <Navigate to={AppRoute.NotFound} />
+    }
+
     return (
         <div className="player">
-            <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+            <video src={currentFilm.videos.videoLink} className="player__video" poster={currentFilm.images.posterSrc}></video>
 
             <button type="button" className="player__exit">Exit</button>
 

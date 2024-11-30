@@ -7,10 +7,11 @@ export const Setting = {
 export enum AppRoute {
     Login= '/login',
     Root = '/',
-    MyList = 'mylist',
+    MyList = '/mylist',
     Film = '/films/:id',
-    AddReview= '/films/:id:review',
-    Player = '/player/:id'
+    AddReview= '/films/:id/review',
+    Player = '/player/:id',
+    NotFound = '/not-found'
 }
 
 export enum AuthorizationStatus {

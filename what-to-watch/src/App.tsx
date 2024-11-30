@@ -8,11 +8,11 @@ import LoginScreen from './pages/login-screen/login-screen';
 import PlayerScreen from './pages/player-screen/player-screen';
 import FilmScreen from './pages/film-screen/film-screen';
 import FavoritesScreen from './pages/favorites-screen/favorites-screen';
-import FeedbackScreen from './pages/feedback-screen/feedback-screen';
 import NotFoundScreen from './pages/not-found-screen/not-found-screen';
 import PrivateRoute from './components/private-route/private-route';
 import { Film } from './types/film';
 import { Review } from './types/review';
+import AddReviewScreen from './pages/add-review-screen/add-review-screen';
 
 
 type AppScreenProps = {
@@ -22,7 +22,9 @@ type AppScreenProps = {
   promoFilmGenre: string;
   promoFilmIssueYear: number;
   films: Film[];
+  favoriteFilms: Film[];
   reviews: Review[][]
+
 }
 
 function App({
@@ -31,7 +33,8 @@ function App({
   promoFilmTitle,
   promoFilmGenre,
   promoFilmIssueYear,
-  films }: AppScreenProps): JSX.Element {
+  films,
+  favoriteFilms }: AppScreenProps): JSX.Element {
 
 
   return (
@@ -54,24 +57,24 @@ function App({
           />
           <Route
             path={AppRoute.Player}
-            element={<PlayerScreen />} />
+            element={<PlayerScreen films={films} />} />
           <Route
             path={AppRoute.Film}
-            element={<FilmScreen />} />
+            element={<FilmScreen films={films} />} />
 
           <Route
             path={AppRoute.MyList}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <FavoritesScreen />
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <FavoritesScreen favoriteFilms={favoriteFilms} />
               </PrivateRoute>
 
             } />
           <Route
             path={AppRoute.AddReview}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <FeedbackScreen />
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <AddReviewScreen films={films} />
               </PrivateRoute>
 
             } />
