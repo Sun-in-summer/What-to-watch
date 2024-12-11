@@ -26,7 +26,8 @@ export const films: Film[] = [
         runtimeInMinutes: 134,
         genre: 'Fantasy',
         releaseYear: 2018,
-        isFavorite: true
+        isFavorite: true, 
+        reviews : [1,2]
     },
     {
         id: 3,
@@ -53,15 +54,16 @@ export const films: Film[] = [
         runtimeInMinutes: 134,
         genre: 'Biography',
         releaseYear: 2018,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 4,
         title: 'Macbeth',
         images: {
-            posterSrc: '/img/poster-macbeth.jpg',
+            posterSrc: '/img/macbeth.jpg',
             previewSrc: '/img/macbeth.jpg',
-            backgroundSrc: '/img/bg-macbeth.jpg',
+            backgroundSrc: '/img/macbeth.jpg',
             backgroundColor: '#ffffff'
         },
         videos: {
@@ -80,7 +82,8 @@ export const films: Film[] = [
         runtimeInMinutes: 113,
         genre: 'Drama',
         releaseYear: 2015,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 5,
@@ -107,7 +110,8 @@ export const films: Film[] = [
         runtimeInMinutes: 170,
         genre: 'Biography',
         releaseYear: 2004,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 6,
@@ -134,7 +138,8 @@ export const films: Film[] = [
         runtimeInMinutes: 112,
         genre: 'Drama',
         releaseYear: 2011,
-        isFavorite: false
+        isFavorite: false,
+        reviews: [1,4,5]
     },
     {
         id: 7,
@@ -161,7 +166,8 @@ export const films: Film[] = [
         runtimeInMinutes: 30,
         genre: 'Comedy',
         releaseYear: 2019,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 8,
@@ -188,7 +194,8 @@ export const films: Film[] = [
         runtimeInMinutes: 156,
         genre: 'Drama',
         releaseYear: 2015,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 9,
@@ -215,7 +222,8 @@ export const films: Film[] = [
         runtimeInMinutes: 138,
         genre: 'Thriller',
         releaseYear: 2010,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 10,
@@ -242,7 +250,8 @@ export const films: Film[] = [
         runtimeInMinutes: 154,
         genre: 'Crime',
         releaseYear: 1994,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 11,
@@ -269,7 +278,8 @@ export const films: Film[] = [
         runtimeInMinutes: 122,
         genre: 'Thriller',
         releaseYear: 2007,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 12,
@@ -296,7 +306,8 @@ export const films: Film[] = [
         runtimeInMinutes: 116,
         genre: 'Sci-Fi',
         releaseYear: 2005,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 13,
@@ -323,7 +334,8 @@ export const films: Film[] = [
         runtimeInMinutes: 87,
         genre: 'Comedy',
         releaseYear: 2003,
-        isFavorite: false
+        isFavorite: false,
+        reviews: [1,4,5]
     },
     {
         id: 14,
@@ -350,7 +362,8 @@ export const films: Film[] = [
         runtimeInMinutes: 102,
         genre: 'Comedy',
         releaseYear: 2000,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 15,
@@ -377,7 +390,8 @@ export const films: Film[] = [
         runtimeInMinutes: 94,
         genre: 'Adventure',
         releaseYear: 2012,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 16,
@@ -404,7 +418,8 @@ export const films: Film[] = [
         runtimeInMinutes: 136,
         genre: 'Adventure',
         releaseYear: 1997,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 17,
@@ -431,7 +446,8 @@ export const films: Film[] = [
         runtimeInMinutes: 112,
         genre: 'Sci-Fi',
         releaseYear: 2016,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 18,
@@ -458,7 +474,8 @@ export const films: Film[] = [
         runtimeInMinutes: 91,
         genre: 'Adventure',
         releaseYear: 2007,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 19,
@@ -485,7 +502,8 @@ export const films: Film[] = [
         runtimeInMinutes: 94,
         genre: 'Drama',
         releaseYear: 1992,
-        isFavorite: false
+        isFavorite: false,
+        reviews: [1,4,5]
     },
     {
         id: 20,
@@ -512,7 +530,8 @@ export const films: Film[] = [
         runtimeInMinutes: 60,
         genre: 'Crime',
         releaseYear: 2017,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
     {
         id: 21,
@@ -539,6 +558,7 @@ export const films: Film[] = [
         runtimeInMinutes: 112,
         genre: 'Horror',
         releaseYear: 2013,
-        isFavorite: true
+        isFavorite: true,
+        reviews: [1,4,5]
     },
 ];

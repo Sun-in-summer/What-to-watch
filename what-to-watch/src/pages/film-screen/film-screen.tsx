@@ -1,17 +1,42 @@
 import { Link, NavLink, useParams } from 'react-router-dom';
 import Logo from '../../components/logo/logo';
-import { Film } from '../../types/film';
+import { DetailsType, Film, OverviewType } from '../../types/film';
 import { AppRoute } from '../../const';
+import { Review } from '../../types/review';
+import Tabs from '../../components/tabs/tabs';
+
 
 type FilmScreenProps = {
     films: Film[];
+    reviews: Review[]
 }
 
-function FilmScreen({ films }: FilmScreenProps): JSX.Element {
+function FilmScreen({ films, reviews }: FilmScreenProps): JSX.Element {
 
     const { id } = useParams();
 
-    const currentFilm = films.find((film) => film.id.toString() === id)
+    const currentFilm = films.find((film) => film.id.toString() === id);
+    const reviewsIds: number[] = currentFilm?.reviews || [];
+    const currentFilmReviews: Review[] = reviews.filter((review) => reviewsIds.includes(review.id));
+    const overview: OverviewType = {
+        description: currentFilm?.description || '',
+        rating: currentFilm?.rating || null,
+        scoresCount: currentFilm?.scoresCount || null,
+        director: currentFilm?.director || '',
+        starring: currentFilm?.starring.join(', ') || ''
+    }
+    const details: DetailsType = {
+        director: currentFilm?.director || '',
+        genre: currentFilm?.genre || '',
+        starring: currentFilm?.starring || [],
+        runtime: currentFilm?.runtimeInMinutes || null,
+        released: currentFilm?.releaseYear || null
+    }
+
+    console.log(reviewsIds);
+    console.log(reviews);
+
+    // console.log(currentFilmReviews);
 
     return (
         <section className="film-card film-card--full">
@@ -72,42 +97,18 @@ function FilmScreen({ films }: FilmScreenProps): JSX.Element {
             </div>
 
             <div className="film-card__wrap film-card__translate-top">
+
+
                 <div className="film-card__info">
                     <div className="film-card__poster film-card__poster--big">
-                        <img src={currentFilm?.images.posterSrc} alt={`${currentFilm?.title} poster`} width="218" height="327" />
+                        <img src={currentFilm?.images.posterSrc} alt={currentFilm?.title} width="218" height="327" />
                     </div>
 
                     <div className="film-card__desc">
-                        <nav className="film-nav film-card__nav">
-                            <ul className="film-nav__list">
-                                <li className="film-nav__item film-nav__item--active">
-                                    <a href="#" className="film-nav__link">Overview</a>
-                                </li>
-                                <li className="film-nav__item">
-                                    <a href="#" className="film-nav__link">Details</a>
-                                </li>
-                                <li className="film-nav__item">
-                                    <a href="#" className="film-nav__link">Reviews</a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                        <div className="film-rating">
-                            <div className="film-rating__score">{currentFilm?.rating}</div>
-                            <p className="film-rating__meta">
-                                <span className="film-rating__level">Very good</span>
-                                <span className="film-rating__count">{currentFilm?.scoresCount} ratings</span>
-                            </p>
-                        </div>
-
-                        <div className="film-card__text">
-                            <p>{currentFilm?.description}</p>
-
-                            <p className="film-card__director"><strong>Director: {currentFilm?.director}</strong></p>
-
-                            <p className="film-card__starring"><strong>Starring: {currentFilm?.starring.join(', ')}</strong></p>
-                        </div>
-                    </div>
+                        <Tabs
+                            overview={overview}
+                            reviews={currentFilmReviews}
+                            details={details} /></div>
                 </div>
             </div>
         </section >

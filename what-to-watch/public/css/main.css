@@ -1038,11 +1038,21 @@ main {
 }
 
 .film-nav__link {
+
   display: block;
   color: #EEE5B5;
   text-decoration: none;
   position: relative;
   padding-bottom: 19px;
+
+}
+
+button.film-nav__link {
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  outline: none;
 }
 
 .film-nav__link::after {

@@ -1,3 +1,5 @@
+
+
 export const Setting = {
     favouriteFilmsCount : 3,
     filmsCardsCount: 20
@@ -19,3 +21,19 @@ export enum AuthorizationStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+
+export enum Genre {
+  Fantasy = 'Fantasy',
+  Biography = 'Biography',
+  Comedy = 'Comedy',
+  Drama = 'Drama',
+  Crime = "Crime",
+  Thriller = 'Thriller',
+  SciFi = 'Sci-Fi',
+  Adventure= "Adventure",
+  Horror = 'Horror', 
+  
+}
+
+export const DEFAULT_GENRE = Genre.Comedy as string;

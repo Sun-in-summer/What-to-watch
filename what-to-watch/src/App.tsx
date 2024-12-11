@@ -23,7 +23,7 @@ type AppScreenProps = {
   promoFilmIssueYear: number;
   films: Film[];
   favoriteFilms: Film[];
-  reviews: Review[][]
+  reviews: Review[];
 
 }
 
@@ -34,6 +34,7 @@ function App({
   promoFilmGenre,
   promoFilmIssueYear,
   films,
+  reviews,
   favoriteFilms }: AppScreenProps): JSX.Element {
 
 
@@ -60,7 +61,7 @@ function App({
             element={<PlayerScreen films={films} />} />
           <Route
             path={AppRoute.Film}
-            element={<FilmScreen films={films} />} />
+            element={<FilmScreen films={films} reviews={reviews} />} />
 
           <Route
             path={AppRoute.MyList}
