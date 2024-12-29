@@ -3,8 +3,15 @@ import { Fragment } from 'react/jsx-runtime';
 import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
-import { Film } from '../../types/film';
+import { Film, Genre } from '../../types/film';
 import { Link } from 'react-router-dom';
+import GenresList from '../../components/genres-list/genres-list';
+import { DEFAULT_QTY_FILMS_ON_PAGE, Genres } from '../../const';
+import { useAppSelector } from '../../hooks';
+import { useEffect, useState } from 'react';
+import ShowMoreButton from '../../components/show-more-button/show-more-button';
+
+
 
 type WelcomeScreenProps = {
     favouriteFilmsCount: number;
@@ -13,15 +20,43 @@ type WelcomeScreenProps = {
     promoFilmGenre: string;
     promoFilmIssueYear: number;
     films: Film[];
+    genres: Genre[];
+
 }
 
 function WelcomeScreen({
     favouriteFilmsCount,
-
     promoFilmTitle,
     promoFilmGenre,
     promoFilmIssueYear,
-    films }: WelcomeScreenProps): JSX.Element {
+    films,
+
+    genres
+}: WelcomeScreenProps): JSX.Element {
+
+    const [shownFilmsCount, setShownFilmsCount] = useState(DEFAULT_QTY_FILMS_ON_PAGE);
+
+    const selectedGenre: Genre = useAppSelector(state => state.genre);
+
+    useEffect(() => {
+        setShownFilmsCount(DEFAULT_QTY_FILMS_ON_PAGE);
+    }, [selectedGenre]);
+
+
+    function getFilmsByGenre(genre: Genre): Film[] {
+        if (genre === Genres.All) {
+            return films;
+        }
+        return films.filter(film => film.genre === genre);
+    }
+
+
+    const filteredFilms = getFilmsByGenre(selectedGenre);
+    const filmsToShow = filteredFilms.slice(0, shownFilmsCount);
+    const handleShowMore = () => {
+        setShownFilmsCount((prevCount) => Math.min(prevCount + DEFAULT_QTY_FILMS_ON_PAGE, filteredFilms.length));
+    };
+
     return (
         <Fragment>
             <section className="film-card">
@@ -36,7 +71,6 @@ function WelcomeScreen({
 
                 <header className="page-header film-card__head">
                     <Logo />
-
                     <ul className="user-block">
                         <li className="user-block__item">
                             <div className="user-block__avatar">
@@ -87,44 +121,14 @@ function WelcomeScreen({
                 <section className="catalog">
                     <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-                    <ul className="catalog__genres-list">
-                        <li className="catalog__genres-item catalog__genres-item--active">
-                            <a href="#" className="catalog__genres-link">All genres</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Comedies</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Crime</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Documentary</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Dramas</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Horror</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Kids & Family</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Romance</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Sci-Fi</a>
-                        </li>
-                        <li className="catalog__genres-item">
-                            <a href="#" className="catalog__genres-link">Thrillers</a>
-                        </li>
-                    </ul>
+                    <GenresList genres={genres} selectedGenre={selectedGenre} />
+                    {<FilmCardsList films={filmsToShow} />}
 
-                    {<FilmCardsList films={films} />}
 
-                    <div className="catalog__more">
-                        <button className="catalog__button" type="button">Show more</button>
-                    </div>
+
+                    {shownFilmsCount < filteredFilms.length && (
+                        <ShowMoreButton onClick={handleShowMore} />
+                    )}
                 </section>
 
                 <footer className="page-footer">

@@ -1,4 +1,4 @@
-
+export const DEFAULT_QTY_FILMS_ON_PAGE=8;
 
 export const Setting = {
     favouriteFilmsCount : 3,
@@ -23,17 +23,19 @@ export enum AuthorizationStatus {
 }
 
 
-export enum Genre {
+export enum Genres {
   Fantasy = 'Fantasy',
   Biography = 'Biography',
   Comedy = 'Comedy',
   Drama = 'Drama',
   Crime = "Crime",
   Thriller = 'Thriller',
-  SciFi = 'Sci-Fi',
+  SciFi = 'SciFi',
   Adventure= "Adventure",
   Horror = 'Horror', 
+  All = "All",
+  
   
 }
 
-export const DEFAULT_GENRE = Genre.Comedy as string;
+export const DEFAULT_GENRE = Genres.Comedy as string;

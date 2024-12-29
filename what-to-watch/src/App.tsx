@@ -10,7 +10,7 @@ import FilmScreen from './pages/film-screen/film-screen';
 import FavoritesScreen from './pages/favorites-screen/favorites-screen';
 import NotFoundScreen from './pages/not-found-screen/not-found-screen';
 import PrivateRoute from './components/private-route/private-route';
-import { Film } from './types/film';
+import { Film, Genre } from './types/film';
 import { Review } from './types/review';
 import AddReviewScreen from './pages/add-review-screen/add-review-screen';
 
@@ -25,17 +25,20 @@ type AppScreenProps = {
   favoriteFilms: Film[];
   reviews: Review[];
 
+  genres: Genre[];
+
 }
 
 function App({
   favouriteFilmsCount,
-
   promoFilmTitle,
   promoFilmGenre,
   promoFilmIssueYear,
   films,
   reviews,
-  favoriteFilms }: AppScreenProps): JSX.Element {
+  favoriteFilms,
+  genres,
+}: AppScreenProps): JSX.Element {
 
 
   return (
@@ -50,7 +53,9 @@ function App({
                 promoFilmTitle={promoFilmTitle}
                 promoFilmGenre={promoFilmGenre}
                 promoFilmIssueYear={promoFilmIssueYear}
-                films={films} />
+                films={films}
+                genres={genres}
+              />
             } />
           <Route
             path={AppRoute.Login}
