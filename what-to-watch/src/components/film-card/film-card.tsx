@@ -37,7 +37,6 @@ function FilmCard({ film }: FilmCardProps): JSX.Element {
     }
 
 
-
     return (
         <article
             className="small-film-card catalog__films-card"
@@ -46,16 +45,16 @@ function FilmCard({ film }: FilmCardProps): JSX.Element {
         >
             {isPlaying ? (
                 <VideoPlayer
-                    src={film.videos.previewVideoLink}
-                    poster={film.images.previewSrc}
+                    src={film.previewVideoLink}
+                    poster={film.previewImage}
                     isPlaying={isPlaying}
                     onEnd={handleVideoEnd} />
             ) : (<div className="small-film-card__image">
-                <img src={film.images.previewSrc} alt={film.title} width="280" height="175" />
+                <img src={film.previewImage} alt={film.name} width="280" height="175" />
             </div>)}
 
             <h3 className="small-film-card__title">
-                <NavLink className="small-film-card__link" to={AppRoute.Film.replace(':id', id.toString())}>{film.title}</NavLink>
+                <NavLink className="small-film-card__link" to={AppRoute.Film.replace(':id', id.toString())}>{film.name}</NavLink>
             </h3>
         </article>
     )

@@ -4,7 +4,7 @@ export type Genre = keyof typeof Genres;
 
 export type Film = {
     id: number,
-    title: string,
+    name: string,
     images: FilmImages,
     videos: FilmVideos,
     description: string,
@@ -12,11 +12,18 @@ export type Film = {
     scoresCount: number,
     director: string;
     starring: string[],
-    runtimeInMinutes: number,
+    runTime: number,
     genre: Genre, 
-    releaseYear: number,
+    released: number,
     isFavorite: boolean
     reviews: number[]
+    previewImage: string;
+    previewVideoLink: string;
+    posterImage: string;
+    backgroundColor: string;
+    backgroundSrc: string;
+    
+
 }
 
 export type FilmImages ={

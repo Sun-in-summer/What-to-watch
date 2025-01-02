@@ -1,4 +1,5 @@
 export const DEFAULT_QTY_FILMS_ON_PAGE=8;
+export const TIMEOUT_SHOW_ERROR = 2000;
 
 export const Setting = {
     favouriteFilmsCount : 3,
@@ -38,4 +39,14 @@ export enum Genres {
   
 }
 
-export const DEFAULT_GENRE = Genres.Comedy as string;
+
+export enum APIRoute {
+  Films = '/films',
+  Login = '/login',
+  Logout = '/logout',
+  Reviews = '/comments',
+  Similar = '/films/:id/similar'
+}
+
+export const DEFAULT_GENRE = Genres.All as string;
+

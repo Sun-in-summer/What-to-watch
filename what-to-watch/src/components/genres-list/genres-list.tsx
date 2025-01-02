@@ -19,7 +19,7 @@ function GenresList({ genres, selectedGenre }: GenresListProps): JSX.Element {
 
     return (
         <ul className="catalog__genres-list">
-            {genres.map((genre) => (<li className={`catalog__genres-item ${selectedGenre && genre === selectedGenre ? 'catalog__genres - item--active' : ''}`} >
+            {genres.map((genre) => (<li key={genre} className={`catalog__genres-item ${selectedGenre && genre === selectedGenre ? 'catalog__genres - item--active' : ''}`} >
                 <a href="#" className="catalog__genres-link" onClick={() => handleGenreClick(genre)}>{genre}</a>
             </li>))
             }

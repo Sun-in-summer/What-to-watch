@@ -1,34 +1,32 @@
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
 import Logo from '../../components/logo/logo';
+import UserBlock from '../../components/user-block/user-block';
+import { useAppSelector } from '../../hooks';
 import { Film } from '../../types/film';
 
-type FavoriteScreenProps = {
-    favoriteFilms: Film[];
-}
 
-function FavoritesScreen({ favoriteFilms }: FavoriteScreenProps): JSX.Element {
+
+function FavoritesScreen(): JSX.Element {
+
+    const films: Film[] = useAppSelector((state) => state.films);
+    const favoriteFilmsCount = useAppSelector((state) => state.favoriteFilmsCount);
+    const favouriteFilms: Film[] = films.filter((film) => film.isFavorite === true);
+
+
+
     return (
         <div className="user-page">
             <header className="page-header user-page__head">
                 < Logo />
 
-                <h1 className="page-title user-page__title">My list <span className="user-page__film-count">9</span></h1>
-                <ul className="user-block">
-                    <li className="user-block__item">
-                        <div className="user-block__avatar">
-                            <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
-                        </div>
-                    </li>
-                    <li className="user-block__item">
-                        <a className="user-block__link">Sign out</a>
-                    </li>
-                </ul>
+                <h1 className="page-title user-page__title">My list <span className="user-page__film-count">{favoriteFilmsCount}</span></h1>
+                <UserBlock />
             </header>
 
             <section className="catalog">
                 <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-                <FilmCardsList films={favoriteFilms} />
+                <FilmCardsList films={favouriteFilms} />
             </section>
 
             <footer className="page-footer">

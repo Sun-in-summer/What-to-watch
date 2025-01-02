@@ -4,35 +4,39 @@ import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
 import { Film, Genre } from '../../types/film';
-import { Link } from 'react-router-dom';
 import GenresList from '../../components/genres-list/genres-list';
 import { DEFAULT_QTY_FILMS_ON_PAGE, Genres } from '../../const';
 import { useAppSelector } from '../../hooks';
 import { useEffect, useState } from 'react';
 import ShowMoreButton from '../../components/show-more-button/show-more-button';
+import MyList from '../../components/my-list/my-list';
+
+import UserBlock from '../../components/user-block/user-block';
 
 
 
 type WelcomeScreenProps = {
-    favouriteFilmsCount: number;
+
 
     promoFilmTitle: string;
     promoFilmGenre: string;
     promoFilmIssueYear: number;
-    films: Film[];
+
     genres: Genre[];
 
 }
 
 function WelcomeScreen({
-    favouriteFilmsCount,
+
     promoFilmTitle,
     promoFilmGenre,
     promoFilmIssueYear,
-    films,
 
     genres
 }: WelcomeScreenProps): JSX.Element {
+
+    const { films } = useAppSelector((state) => state);
+
 
     const [shownFilmsCount, setShownFilmsCount] = useState(DEFAULT_QTY_FILMS_ON_PAGE);
 
@@ -71,16 +75,7 @@ function WelcomeScreen({
 
                 <header className="page-header film-card__head">
                     <Logo />
-                    <ul className="user-block">
-                        <li className="user-block__item">
-                            <div className="user-block__avatar">
-                                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
-                            </div>
-                        </li>
-                        <li className="user-block__item">
-                            <a className="user-block__link">Sign out</a>
-                        </li>
-                    </ul>
+                    <UserBlock />
                 </header>
 
                 <div className="film-card__wrap">
@@ -103,13 +98,7 @@ function WelcomeScreen({
                                     </svg>
                                     <span>Play</span>
                                 </button>
-                                <Link to='/mylist' ><button className="btn btn--list film-card__button" type="button">
-                                    <svg viewBox="0 0 19 20" width="19" height="20">
-                                        <use xlinkHref="#add"></use>
-                                    </svg>
-                                    <span>My list</span>
-                                    <span className="film-card__count">{favouriteFilmsCount}</span>
-                                </button></Link>
+                                <MyList />
 
                             </div>
                         </div>
