@@ -7,8 +7,8 @@ import { films } from './mocks/films.ts';
 import { Provider } from 'react-redux';
 import { store } from './store/index.ts';
 import { Genre } from './types/film.ts';
-import { checkAuthAction, fetchFilmsAction } from './store/api-actions.ts';
-import { ToastContainer } from 'react-toastify';
+import { fetchFilmsAction } from './store/api-actions.ts';
+// import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const DEFAULT_FILM_TITLE = "The Grand Budapest Hotel";
@@ -17,13 +17,13 @@ const DEFAULT_YEAR = 2014;
 const genres: Genre[] = Object.values(Genres);
 
 store.dispatch(fetchFilmsAction());
-store.dispatch(checkAuthAction());
+// store.dispatch(checkAuthAction());
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <ToastContainer />
+
       <App
 
         filmsCardsCount={Setting.filmsCardsCount}
@@ -31,11 +31,19 @@ createRoot(document.getElementById('root')!).render(
         promoFilmGenre={DEFAULT_GENRE}
         promoFilmIssueYear={DEFAULT_YEAR}
         films={films}
-
-
         genres={genres}
 
       />
+      {/* <ToastContainer
+        autoClose={3000}
+        position="top-right"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover /> */}
     </Provider>
   </StrictMode>,
 )

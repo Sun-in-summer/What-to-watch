@@ -75,9 +75,10 @@ const reducer = createReducer(initialState, (builder)=>{
       state.isSimilarFilmsLoaded = action.payload;
     })
   .addCase(loadSelectedFilm, (state, action) =>{
-      state.selectedFilm= action.payload;
-    })
+       state.selectedFilm = action.payload;
+   })
     .addCase(loadReviews, (state, action) => {
+      console.log(action.payload);
       state.reviews = action.payload;
     })
     .addCase(loadSimilarFilms, (state, action)=>{

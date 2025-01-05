@@ -12,10 +12,10 @@ import NotFoundScreen from './pages/not-found-screen/not-found-screen';
 import PrivateRoute from './components/private-route/private-route';
 import { Film, Genre } from './types/film';
 import AddReviewScreen from './pages/add-review-screen/add-review-screen';
-import { useAppSelector } from './hooks';
-import Spinner from './components/spinner/spinner';
 import HistoryRouter from './components/history-route/history-route';
 import browserHistory from './browser-history';
+import Spinner from './components/spinner/spinner';
+import { useAppSelector } from './hooks';
 
 
 
@@ -45,17 +45,16 @@ function App({
 }: AppScreenProps): JSX.Element {
 
   // const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
-  const isFilmsDataLoading = useAppSelector((state) => state.isFilmsDataLoading);
 
+  const isFilmsDataLoaded = useAppSelector((state) => state.isFilmsDataLoaded);
 
-  if (isFilmsDataLoading) {
+  if (isFilmsDataLoaded) {
 
-    console.log("isFilmsDataLoading", isFilmsDataLoading);
+    console.log("isFilmsDataLoaded", isFilmsDataLoaded);
     return (
       <Spinner />
     );
   }
-
 
   return (
     <HelmetProvider>

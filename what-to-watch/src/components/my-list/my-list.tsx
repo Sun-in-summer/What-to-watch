@@ -3,14 +3,9 @@ import { useAppSelector } from '../../hooks';
 
 
 
-
 function MyList(): JSX.Element {
 
-
-
     const favouriteFilmsCount = useAppSelector((state) => state.favoriteFilmsCount);
-    const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
-    console.log(authorizationStatus);
 
 
     return (

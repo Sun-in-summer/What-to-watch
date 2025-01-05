@@ -5,7 +5,7 @@ import SignOut from '../sign-out/sign-out';
 
 function UserBlock(): JSX.Element {
 
-    const { authorizationStatus } = useAppSelector((state) => state);
+    const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
     const userAvatar = useAppSelector((state) => state.userAvatar);
 
     return (<ul className="user-block">

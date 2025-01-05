@@ -1,4 +1,4 @@
-import { Fragment } from 'react/jsx-runtime';
+// import { Fragment } from 'react/jsx-runtime';
 
 import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
@@ -12,6 +12,7 @@ import ShowMoreButton from '../../components/show-more-button/show-more-button';
 import MyList from '../../components/my-list/my-list';
 
 import UserBlock from '../../components/user-block/user-block';
+
 
 
 
@@ -35,7 +36,8 @@ function WelcomeScreen({
     genres
 }: WelcomeScreenProps): JSX.Element {
 
-    const { films } = useAppSelector((state) => state);
+
+    const films = useAppSelector((state) => state.films);
 
 
     const [shownFilmsCount, setShownFilmsCount] = useState(DEFAULT_QTY_FILMS_ON_PAGE);
@@ -61,8 +63,10 @@ function WelcomeScreen({
         setShownFilmsCount((prevCount) => Math.min(prevCount + DEFAULT_QTY_FILMS_ON_PAGE, filteredFilms.length));
     };
 
+
+
     return (
-        <Fragment>
+        <div className="film-card">
             <section className="film-card">
                 <Helmet>
                     <title> Что посмотреть</title>
@@ -128,7 +132,7 @@ function WelcomeScreen({
                     </div>
                 </footer>
             </div>
-        </Fragment>
+        </div>
     )
 }
 

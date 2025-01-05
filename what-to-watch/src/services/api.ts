@@ -39,11 +39,23 @@ export const createAPI = ():AxiosInstance =>{
   api.interceptors.response.use(
     (response) => response, 
     (error: AxiosError<DetailMessageType>)=> {
-      if (error.response  && shouldDisplayError(error.response)) {
-       const detailMessage = (error.response.data);
-        toast.warn(detailMessage.message);
-  }    
-   throw error;
+    if (axios.isAxiosError(error)) {
+      if (!error.response) {
+        // Проверяет, произошла ли ошибка не из-за ответа сервера, например, отсутствие интернета
+        toast.error("No internet connection. Please check your network.");
+      } else if (error.code === 'ECONNABORTED' || error.message.includes('Network Error')) {
+        toast.error("Connection error. Please try again.");
+      } else if (shouldDisplayError(error.response)) {
+        const detailMessage = error.response.data;
+        toast.warn(detailMessage.message || "An error occurred.");
+      } else {
+        toast.error("An unexpected error occurred.");
+      }
+    } else {
+      toast.error("An unknown error occurred.");
+    }
+
+    throw error;
   }
 );
 

@@ -10,9 +10,6 @@ import { Fragment, useEffect } from 'react';
 import { fetchReviewsAction, fetchSelectedFilmAction, fetchSimilarFilmsAction } from '../../store/api-actions';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
 
-
-
-
 function FilmScreen(): JSX.Element {
 
     const { id } = useParams();
@@ -26,22 +23,16 @@ function FilmScreen(): JSX.Element {
         }
     }, [dispatch, id])
 
-    const { films } = useAppSelector((state) => state);
-    const currentFilm = films.find((film) => film.id === Number(id));
-    const { reviews } = useAppSelector((state) => state);
-    const { similarFilms } = useAppSelector((state) => state);
+    const currentFilm = useAppSelector((state) => state.selectedFilm);
+    const reviews: Review[] = useAppSelector((state) => state.reviews);
+    const similarFilms = useAppSelector((state) => state.similarFilms);
 
-
-
-    console.log(currentFilm);
-    const reviewsIds: number[] = currentFilm?.reviews || [];
-    const currentFilmReviews: Review[] = reviews.filter((review) => reviewsIds.includes(review.id));
     const overview: OverviewType = {
         description: currentFilm?.description || '',
         rating: currentFilm?.rating || null,
         scoresCount: currentFilm?.scoresCount || null,
         director: currentFilm?.director || '',
-        starring: currentFilm?.starring.join(', ') || ''
+        starring: currentFilm?.starring?.join(', ') || ''
     }
     const details: DetailsType = {
         director: currentFilm?.director || '',
@@ -51,12 +42,7 @@ function FilmScreen(): JSX.Element {
         released: currentFilm?.released || null
     }
 
-
-
-    console.log(reviewsIds);
     console.log(reviews);
-
-    // console.log(currentFilmReviews);
 
     return (
         <Fragment>
@@ -119,7 +105,7 @@ function FilmScreen(): JSX.Element {
                         <div className="film-card__desc">
                             <Tabs
                                 overview={overview}
-                                reviews={currentFilmReviews}
+                                reviews={reviews}
                                 details={details} /></div>
                     </div>
                 </div>
