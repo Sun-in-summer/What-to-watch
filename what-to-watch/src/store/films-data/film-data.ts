@@ -3,6 +3,7 @@ import { DEFAULT_GENRE, NameSpace } from '../../const';
 import { Film, Genre } from '../../types/film';
 import { Review } from '../../types/review';
 import {
+  fetchFavoriteFilmsAction,
   fetchFilmsAction,
   fetchReviewsAction,
   fetchSelectedFilmAction,
@@ -25,7 +26,9 @@ type FilmData = {
   reviews: Review[];
   similarFilms: Film[];
   isErrorLoading: boolean;
-  isReviewSent: boolean
+  isReviewSent: boolean;
+  isFavoriteFilmsLoading: boolean;
+  favoriteFilms: Film[]
 };
 
 const initialState: FilmData = {
@@ -44,7 +47,9 @@ const initialState: FilmData = {
   reviews: [],
   isErrorLoading: false,
   isReviewSent: false,
-  isSelectedFilmLoading: false
+  isSelectedFilmLoading: false,
+  isFavoriteFilmsLoading: false,
+  favoriteFilms: []
 };
 export const filmData = createSlice({
   name: NameSpace.Data,
@@ -74,6 +79,18 @@ export const filmData = createSlice({
       })
       .addCase(fetchSimilarFilmsAction.fulfilled, (state, action) => {
         state.similarFilms = action.payload;
-      });
+      })
+        .addCase(fetchFavoriteFilmsAction.pending, (state)=> {
+        state.isFavoriteFilmsLoading = true;
+      })
+      .addCase(fetchFavoriteFilmsAction.fulfilled, (state, action)=> {
+        state.favoriteFilms = action.payload;
+        state.isFavoriteFilmsLoading = false;
+      })
+      .addCase(fetchFavoriteFilmsAction.rejected, (state, )=> {
+        state.isFavoriteFilmsLoading = false;
+      })
+
+
   },
 });

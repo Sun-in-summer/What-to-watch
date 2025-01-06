@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks';
-import React from 'react';
 import { getFavoriteFilmsCount } from '../../store/films-data/selectors';
+import { AppRoute } from '../../const';
 
 
 
@@ -11,7 +11,7 @@ function MyList(): JSX.Element {
 
 
     return (
-        <Link to='/mylist' ><button className="btn btn--list film-card__button" type="button">
+        <Link to={AppRoute.MyList} ><button className="btn btn--list film-card__button" type="button">
             <svg viewBox="0 0 19 20" width="19" height="20">
                 <use xlinkHref="#add"></use>
             </svg>
@@ -21,4 +21,4 @@ function MyList(): JSX.Element {
     )
 }
 
-export default React.memo(MyList);
+export default MyList;

@@ -2,16 +2,26 @@ import FilmCardsList from '../../components/film-cards-list/film-cards-list';
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
 import { useAppSelector } from '../../hooks';
+import { getFavoriteFilms, getFavoriteFilmsCount, getFavoriteFilmsLoadingStatus } from '../../store/films-data/selectors';
 import { Film } from '../../types/film';
+import LoadingScreen from '../loading-screen/loading-screen';
 
 
 
 function FavoritesScreen(): JSX.Element {
 
-    const films: Film[] = useAppSelector((state) => state.films);
-    const favoriteFilmsCount = useAppSelector((state) => state.favoriteFilmsCount);
-    const favouriteFilms: Film[] = films.filter((film) => film.isFavorite === true);
 
+    const isFavoritesFilmsLoading = useAppSelector(getFavoriteFilmsLoadingStatus);
+    const favouriteFilms: Film[] = useAppSelector(getFavoriteFilms);
+    const favoriteFilmsCount: number = useAppSelector(getFavoriteFilmsCount);
+
+
+
+    if (isFavoritesFilmsLoading) {
+        return (
+            <LoadingScreen />
+        );
+    }
 
 
     return (

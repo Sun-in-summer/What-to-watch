@@ -9,6 +9,8 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Fragment, useEffect } from 'react';
 import { fetchReviewsAction, fetchSelectedFilmAction, fetchSimilarFilmsAction } from '../../store/api-actions';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
+import { getReviewsData, getSelectedFilmData, getSimilarFilmsData } from '../../store/films-data/selectors';
+import MyList from '../../components/my-list/my-list';
 
 function FilmScreen(): JSX.Element {
 
@@ -23,9 +25,9 @@ function FilmScreen(): JSX.Element {
         }
     }, [dispatch, id])
 
-    const currentFilm = useAppSelector((state) => state.selectedFilm);
-    const reviews: Review[] = useAppSelector((state) => state.reviews);
-    const similarFilms = useAppSelector((state) => state.similarFilms);
+    const currentFilm = useAppSelector(getSelectedFilmData);
+    const reviews: Review[] = useAppSelector(getReviewsData);
+    const similarFilms = useAppSelector(getSimilarFilmsData);
 
     const overview: OverviewType = {
         description: currentFilm?.description || '',
@@ -41,8 +43,6 @@ function FilmScreen(): JSX.Element {
         runtime: currentFilm?.runTime || null,
         released: currentFilm?.released || null
     }
-
-    console.log(reviews);
 
     return (
         <Fragment>
@@ -81,13 +81,8 @@ function FilmScreen(): JSX.Element {
                                     </button>
                                 </Link>
 
-                                <Link to={AppRoute.MyList} className="film-card__button" ><button className="btn btn--list film-card__button" type="button">
-                                    <svg viewBox="0 0 19 20" width="19" height="20">
-                                        <use xlinkHref="#add"></use>
-                                    </svg>
-                                    <span>My list</span>
-                                    <span className="film-card__count">9</span>
-                                </button></Link>
+                                <MyList />
+
                                 <NavLink to={AppRoute.AddReview.replace(':id', id!.toString())} className="btn film-card__button">Add review</NavLink>
                             </div>
                         </div>
@@ -132,7 +127,8 @@ function FilmScreen(): JSX.Element {
                         <p>© 2019 What to watch Ltd.</p>
                     </div>
                 </footer>
-            </div></Fragment>
+            </div>
+        </Fragment>
 
     )
 }

@@ -16,6 +16,8 @@ import HistoryRouter from './components/history-route/history-route';
 import browserHistory from './browser-history';
 import Spinner from './components/spinner/spinner';
 import { useAppSelector } from './hooks';
+import { getFilmsDataLoadingStatus } from './store/films-data/selectors';
+
 
 
 
@@ -46,7 +48,7 @@ function App({
 
   // const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
 
-  const isFilmsDataLoaded = useAppSelector((state) => state.isFilmsDataLoaded);
+  const isFilmsDataLoaded = useAppSelector(getFilmsDataLoadingStatus);
 
   if (isFilmsDataLoaded) {
 

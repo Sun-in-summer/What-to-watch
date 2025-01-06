@@ -6,6 +6,8 @@ import { State } from '../../types/state';
 export const getFilmsData = (state: State): Film[] => state[NameSpace.Data].films;
 export const getFilmsDataLoadingStatus = (state: State): boolean => state[NameSpace.Data].isFilmsDataLoading;
 export const getFavoriteFilmsCount = (state: State): number => state[NameSpace.Data].favoriteFilmsCount;
+export const getFavoriteFilmsLoadingStatus = (state: State): boolean => state[NameSpace.Data].isFavoriteFilmsLoading;
+export const getFavoriteFilms = (state: State): Film[] => state[NameSpace.Data].favoriteFilms;
 
 export const getErrorInfo = (state: State) : string | null => state[NameSpace.Data].error;
 
