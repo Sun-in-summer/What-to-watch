@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import { Film } from '../../types/film';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import VideoPlayer from '../video-player/video-player';
 
 
@@ -17,24 +17,24 @@ function FilmCard({ film }: FilmCardProps): JSX.Element {
     const [isPlaying, setIsPlaying] = useState(false);
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
-    const handleMouseEnter = () => { //добавить useCallback
+    const handleMouseEnter = () => {
         const timeout = setTimeout(() => {
             setIsPlaying(true);
         }, 1000);
         setHoverTimeout(timeout);
-    }
+    };
 
 
-    const handleMouseLeave = () => { //useCallback
+    const handleMouseLeave = () => {
         if (hoverTimeout) {
             clearTimeout(hoverTimeout);
         }
         setIsPlaying(false);
-    }
+    };
 
-    const handleVideoEnd = () => {
+    const handleVideoEnd = useCallback(() => {
         setIsPlaying(false);
-    }
+    }, []);
 
 
     return (

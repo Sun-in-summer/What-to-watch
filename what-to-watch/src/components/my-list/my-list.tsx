@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks';
+import React from 'react';
+import { getFavoriteFilmsCount } from '../../store/films-data/selectors';
 
 
 
 function MyList(): JSX.Element {
 
-    const favouriteFilmsCount = useAppSelector((state) => state.favoriteFilmsCount);
+    const favouriteFilmsCount = useAppSelector(getFavoriteFilmsCount);
 
 
     return (
@@ -19,4 +21,4 @@ function MyList(): JSX.Element {
     )
 }
 
-export default MyList;
+export default React.memo(MyList);

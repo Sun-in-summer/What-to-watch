@@ -3,28 +3,25 @@
 import Logo from '../../components/logo/logo';
 import { Helmet } from 'react-helmet-async';
 import FilmCardsList from '../../components/film-cards-list/film-cards-list';
-import { Film, Genre } from '../../types/film';
+import { Genre } from '../../types/film';
 import GenresList from '../../components/genres-list/genres-list';
-import { DEFAULT_QTY_FILMS_ON_PAGE, Genres } from '../../const';
+import { DEFAULT_QTY_FILMS_ON_PAGE } from '../../const';
 import { useAppSelector } from '../../hooks';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import ShowMoreButton from '../../components/show-more-button/show-more-button';
 import MyList from '../../components/my-list/my-list';
-
 import UserBlock from '../../components/user-block/user-block';
+import { getSelectedGenre } from '../../store/select-genre-process/selectors';
+import { selectFilteredFilms } from '../../store/composedSelectors';
 
 
 
 
 type WelcomeScreenProps = {
-
-
     promoFilmTitle: string;
     promoFilmGenre: string;
     promoFilmIssueYear: number;
-
     genres: Genre[];
-
 }
 
 function WelcomeScreen({
@@ -37,36 +34,27 @@ function WelcomeScreen({
 }: WelcomeScreenProps): JSX.Element {
 
 
-    const films = useAppSelector((state) => state.films);
+    const selectedGenre: Genre = useAppSelector(getSelectedGenre);
 
 
     const [shownFilmsCount, setShownFilmsCount] = useState(DEFAULT_QTY_FILMS_ON_PAGE);
 
-    const selectedGenre: Genre = useAppSelector(state => state.genre);
+
 
     useEffect(() => {
         setShownFilmsCount(DEFAULT_QTY_FILMS_ON_PAGE);
     }, [selectedGenre]);
 
 
-    function getFilmsByGenre(genre: Genre): Film[] {
-        if (genre === Genres.All) {
-            return films;
-        }
-        return films.filter(film => film.genre === genre);
-    }
-
-
-    const filteredFilms = getFilmsByGenre(selectedGenre);
-    const filmsToShow = filteredFilms.slice(0, shownFilmsCount);
-    const handleShowMore = () => {
+    const filteredFilms = useAppSelector(selectFilteredFilms);
+    const filmsToShow = useMemo(() => filteredFilms.slice(0, shownFilmsCount), [filteredFilms, shownFilmsCount]);
+    const handleShowMore = useCallback(() => {
         setShownFilmsCount((prevCount) => Math.min(prevCount + DEFAULT_QTY_FILMS_ON_PAGE, filteredFilms.length));
-    };
-
+    }, [filteredFilms.length]);
 
 
     return (
-        <div className="film-card">
+        <>
             <section className="film-card">
                 <Helmet>
                     <title> Что посмотреть</title>
@@ -132,7 +120,7 @@ function WelcomeScreen({
                     </div>
                 </footer>
             </div>
-        </div>
+        </>
     )
 }
 

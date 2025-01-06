@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/index.ts';
 import { Genre } from './types/film.ts';
 import { fetchFilmsAction } from './store/api-actions.ts';
-// import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const DEFAULT_FILM_TITLE = "The Grand Budapest Hotel";

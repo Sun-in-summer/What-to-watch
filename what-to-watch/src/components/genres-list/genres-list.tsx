@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../../hooks';
-import { setGenre } from '../../store/actions';
+import { setGenre } from '../../store/select-genre-process/select-genre-process';
 import { Genre } from '../../types/film';
 
 

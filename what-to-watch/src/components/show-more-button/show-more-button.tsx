@@ -1,3 +1,5 @@
+import React from 'react';
+
 type ShowMoreButtonProps = {
     onClick: () => void;
 };
@@ -12,4 +14,4 @@ function ShowMoreButton({ onClick }: ShowMoreButtonProps): JSX.Element {
     );
 }
 
-export default ShowMoreButton;
+export default React.memo(ShowMoreButton);

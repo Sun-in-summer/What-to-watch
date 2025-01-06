@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -15,4 +16,4 @@ function Logo(): JSX.Element {
 }
 
 
-export default Logo;
+export default React.memo(Logo);

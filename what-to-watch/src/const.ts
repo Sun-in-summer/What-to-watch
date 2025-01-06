@@ -46,7 +46,15 @@ export enum APIRoute {
   Login = '/login',
   Logout = '/logout',
   Reviews = '/comments/:id',
-  Similar = '/films/:id/similar'
+  Similar = '/films/:id/similar',
+  Favorite  = '/favorite'
+
+}
+
+export enum NameSpace {
+  Data = 'DATA',
+  User = 'USER',
+  Genre = 'GENRE'
 }
 
 export const DEFAULT_GENRE = Genres.All as string;
